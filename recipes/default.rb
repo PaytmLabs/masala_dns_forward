@@ -16,9 +16,10 @@ template "/etc/named.conf" do
   owner 'root'
   group 'named'
   mode  00644
+  notifies :restart, "service[named]"
 end
 
 service "named" do
-  action [:enable, :start]
+  action [:enable]
 end
 
