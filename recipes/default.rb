@@ -23,3 +23,19 @@ service "named" do
   action [:enable]
 end
 
+# register process monitor
+if node['masala_base']['dd_enable'] && !node['masala_base']['dd_api_key'].nil?
+  ruby_block "datadog-process-monitor-named" do
+    block do
+      node.set['masala_base']['dd_proc_mon']['named'] = {
+        search_string: ['named'],
+        exact_match: true,
+        thresholds: {
+         critical: [1, 1]
+        }
+      }
+    end
+    notifies :run, 'ruby_block[datadog-process-monitors-render]'
+  end
+end
+
