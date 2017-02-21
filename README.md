@@ -47,6 +47,12 @@ Please also see the documentation for the cookbooks included by masala_dns_forwa
     <td>A hash where the key name is a DNS zone, and it's value is an array of DNS resolver IPs to use for said zone.</td>
     <td><tt>{}</tt></td>
   </tr>
+  <tr>
+    <td><tt>['masala_dns_forward']['zone_replicas']</tt></td>
+    <td>Hash of Arrays</td>
+    <td>A hash where the key name is a DNS zone, and it's value is an array of DNS master IPs to use transfer dais zone</td>
+    <td><tt>{}</tt></td>
+  </tr>
 </table>
 
 ## Usage

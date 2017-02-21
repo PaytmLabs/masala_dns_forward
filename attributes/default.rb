@@ -12,3 +12,6 @@ default['masala_dns_forward']['default_resolvers'] = [
 ]
 # A hash of zone names to lists of resolvers used for zone-specific forwards
 default['masala_dns_forward']['zone_resolvers'] = {}
+
+# A hash of zone names to lists of master servers, to replicate for local serving
+default['masala_dns_forward']['zone_replicas'] = {}

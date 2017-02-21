@@ -94,5 +94,7 @@ suites:
           orsn:
             - '212.224.71.71'
             - '79.133.62.62'
-
+        zone_replicas:
+          zonetransfer.me:
+            - '81.4.108.41'
 

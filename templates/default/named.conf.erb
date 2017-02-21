@@ -73,6 +73,18 @@ zone "<%= zone %>" {
 };
 <% end -%>
 
+<% node['masala_dns_forward']['zone_replicas'].each do |zone, masters| -%>
+zone "<%= zone %>" {
+    type slave;
+    file "/var/named/slaves/<%= zone %>";
+    masters { 
+<% masters.each do |master| -%>
+        <%= master %>;
+<% end -%>
+    };
+};
+<% end -%>
+
 zone "." IN {
 	type hint;
 	file "named.ca";
