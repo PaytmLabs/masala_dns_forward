@@ -23,6 +23,9 @@ options {
 	statistics-file "/var/named/data/named_stats.txt";
 	memstatistics-file "/var/named/data/named_mem_stats.txt";
 	allow-query     { allowedclients; };
+	recursive-clients 10000;
+	clients-per-query 0;
+	max-clients-per-query 0;
 
 	/* 
 	 - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
