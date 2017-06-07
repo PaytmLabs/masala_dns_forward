@@ -26,6 +26,8 @@ options {
 	recursive-clients 10000;
 	clients-per-query 0;
 	max-clients-per-query 0;
+	avoid-v4-udp-ports { 1935; 2605; 4321; 6514; range 8610 8614; };
+	avoid-v6-udp-ports { 1935; 2605; 4321; 6514; range 8610 8614; };
 
 	/* 
 	 - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
